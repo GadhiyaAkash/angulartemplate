@@ -39,9 +39,40 @@
 }
 
 .homepage {
-  .row >img {
+  .row>img {
     width: -webkit-fill-available;
     height: 537px;
+  }
+
+  .container {
+    position: relative;
+
+    h1 {
+      position: absolute;
+      font-weight: 700;
+      font-size: 63px;
+      top: 31%;
+      left: 14%;
+      letter-spacing: 2px;
+    }
+
+    p {
+      position: absolute;
+      font-size: 20px;
+      top: 63%;
+      left: 14%;
+      text-transform: uppercase;
+    }
+
+    ul {
+      color: #aba2a2;
+      position: absolute;
+      font-size: 14px;
+      top: 71%;
+      left: 14%;
+      list-style: none;
+      padding: 0;
+    }
   }
 }
 
@@ -56,5 +87,32 @@
   .sopping-cart {
     color: white;
     background-color: black;
+  }
+}
+
+.gallery {
+  position: relative;
+  top: 117px;
+  padding-bottom: 50px;
+  margin-bottom: 20px;
+
+  .gallery-about {
+    text-align: center;
+
+    h1 {
+      font-size: 48px;
+      line-height: 60px !important;
+      font-weight: 900 !important;
+      margin-bottom: 50px;
+    }
+
+    h5 {
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    p {
+      letter-spacing: 2px;
+    }
   }
 }
