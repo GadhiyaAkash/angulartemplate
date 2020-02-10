@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart, faCreditCard, faLock, faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +8,9 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 })
 export class AppComponent {
   faShoppingBasket = faShoppingCart;
+  faCreditCard = faCreditCard;
+  faLock = faLock;
+  faArrowAltCircleUp = faArrowAltCircleUp
 
   @HostListener('window:scroll', ['$event']) // for window scroll events
   onScroll(event) {
@@ -18,5 +21,16 @@ export class AppComponent {
     // } else {
     //   element.classList.remove('sticky');
     // }
+  }
+
+  scrollToTop() {
+    let scrollToTop = window.setInterval(() => {
+      let pos = window.pageYOffset;
+      if (pos > 0) {
+          window.scrollTo(0, pos - 20); // how far to scroll on each step
+      } else {
+          window.clearInterval(scrollToTop);
+      }
+  }, 16);
   }
 }
