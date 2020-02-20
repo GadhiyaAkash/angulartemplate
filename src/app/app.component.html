@@ -1,31 +1,6 @@
-<div class="container header" id="navbar">
-  <div class="row">
-    <div class="col-sm-3">
-      <h1>Jevelin</h1>
-    </div>
-    <div class="col-sm-6">
-      <ul class="header-menu">
-        <li>Home</li>
-        <li>Gallery</li>
-        <li>Features</li>
-        <li>Reviews</li>
-        <li>Shop</li>
-      </ul>
-    </div>
-    <div class="col-sm-3">
-      <div class="row">
-        <div class="col-sm-2">
-          <fa-icon [icon]="faShoppingBasket"></fa-icon>
-        </div>
-        <div class="col-sm-6">
-          <div class="sopping-cart">
-            <a>Buy Now</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<section id="header">
+  <app-header></app-header>
+</section>
 
 <section class="homepage" (scroll)="onScroll($event)">
   <div class="container">
@@ -41,66 +16,12 @@
   </div>
 </section>
 
-<section class="gallery">
-  <div class="gallery-about">
-    <h5 class="w-black">About our shoes</h5>
-    <h1>
-      <span>New, Improved Design </span><br>
-      <span>and Performance</span>
-    </h1>
-    <p>
-      <span>New Design 95S Stripes Casual Running Shoes for men Black white Red</span><br>
-      <span>Khaki mens Walking Boots Outdoor Sneakers 5-11bj8</span>
-    </p>
-  </div>
+<section id="gallery">
+  <app-gallery></app-gallery>
 </section>
 
 <section id="footer">
-  <div class="footer container">
-    <div class="row">
-      <div class="col-sm-6 first-part">
-        <h1 class="w-text logo">JEVELIN</h1>
-        <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam.</span>
-
-        <div class="payment">
-          <fa-icon [icon]="faCreditCard"></fa-icon>
-          <fa-icon [icon]="faShoppingBasket"></fa-icon>
-          <fa-icon [icon]="faCreditCard"></fa-icon>
-          <fa-icon [icon]="faShoppingBasket"></fa-icon>
-        </div>
-
-        <div class="secure-payment">
-          <fa-icon [icon]="faLock"></fa-icon>
-          <span>Secure online payment</span>
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="row">
-          <div class="col-sm-6">
-            <span class="w-text heading">BEST EXPERIENCE</span>
-            <ul>
-              <li>FAQ</li>
-              <li>Shipment</li>
-              <li>Returns</li>
-              <li>Gift cards</li>
-              <li>Policies</li>
-            </ul>
-          </div>
-          <div class="col-sm-6">
-            <span class="w-text heading">COMPANY</span>
-            <ul>
-              <li>About Us</li>
-              <li>Press</li>
-              <li>Offices</li>
-              <li>Affiliates</li>
-              <li>Giveaway</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <p class="copyright t-align-center">Copyright © 2020 – Theme by Akash Gadhiya</p>
-  </div>
+  <app-footer></app-footer>
 </section>
 
 <div class="top-arrow" (click)="scrollToTop()">

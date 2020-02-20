@@ -7,12 +7,10 @@ import { faShoppingCart, faCreditCard, faLock, faArrowAltCircleUp } from '@forta
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  faShoppingBasket = faShoppingCart;
-  faCreditCard = faCreditCard;
-  faLock = faLock;
   faArrowAltCircleUp = faArrowAltCircleUp
-
+  
   @HostListener('window:scroll', ['$event']) // for window scroll events
+
   onScroll(event) {
     // console.log("event::", window.pageYOffset);
     // let element = document.getElementById('navbar');
@@ -27,10 +25,10 @@ export class AppComponent {
     let scrollToTop = window.setInterval(() => {
       let pos = window.pageYOffset;
       if (pos > 0) {
-          window.scrollTo(0, pos - 20); // how far to scroll on each step
+        window.scrollTo(0, pos - 20);
       } else {
-          window.clearInterval(scrollToTop);
+        window.clearInterval(scrollToTop);
       }
-  }, 16);
+    }, 16);
   }
 }

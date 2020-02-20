@@ -1,0 +1,68 @@
+.footer {
+    background-color: black;
+    top: 117px;
+    position: relative;
+    padding: 50px 50px 20px 50px; 
+  
+    ul {
+      list-style: none;
+      color: white;
+      padding: 0;
+      margin-top: 15px;
+  
+      li {
+        margin-bottom: 10px;
+      }
+    }
+  
+    .heading {
+      font-weight: 700;
+      font-size: 18px;
+    }
+  
+    .first-part {
+      padding-left: 53px;
+  
+      span {
+        font-size: 16px;
+        color: #a1a1a1;
+        margin: 0px 0px 15px 0px;
+      }
+  
+      .secure-payment {
+        padding-top: 10px;
+  
+        fa-icon {
+          color: white;
+          font-size: 12px;
+        }
+  
+        span {
+          padding-left: 10px;
+          font-size: 12px;
+        }
+      }
+    }
+  
+    .logo {
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+  
+    .payment {
+      padding-top: 50px;
+  
+      fa-icon {
+        font-size: 20px;
+        cursor: pointer;
+        text-align: center;
+        color: white;
+        padding-right: 20px;
+      }
+    }
+  
+    .copyright {
+      color: #968f8f;
+      margin-top: 30px;
+    }
+  }

@@ -1,0 +1,26 @@
+.gallery {
+    position: relative;
+    top: 117px;
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+  
+    .gallery-about {
+      text-align: center;
+  
+      h1 {
+        font-size: 48px;
+        line-height: 60px !important;
+        font-weight: 900 !important;
+        margin-bottom: 50px;
+      }
+  
+      h5 {
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+  
+      p {
+        letter-spacing: 2px;
+      }
+    }
+  }

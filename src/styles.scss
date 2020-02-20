@@ -1,13 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
+.container {
+  max-width: inherit;
+}
+
 .w-text {
-    color: white;
+  color: white;
 }
 
 .b-text {
-    color: black;
+  color: black;
 }
 
 .t-align-center {
-    text-align: center;
+  text-align: center;
 }
