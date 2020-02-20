@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { faShoppingCart, faCreditCard, faLock, faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
+import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
