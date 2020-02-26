@@ -9,17 +9,7 @@ import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons';
 export class AppComponent {
   faArrowAltCircleUp = faArrowAltCircleUp
   
-  @HostListener('window:scroll', ['$event']) // for window scroll events
-
-  onScroll(event) {
-    // console.log("event::", window.pageYOffset);
-    // let element = document.getElementById('navbar');
-    // if (window.pageYOffset >= 50) {
-    //   element.classList.add('sticky');
-    // } else {
-    //   element.classList.remove('sticky');
-    // }
-  }
+  
 
   scrollToTop() {
     let scrollToTop = window.setInterval(() => {

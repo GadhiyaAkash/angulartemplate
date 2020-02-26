@@ -115,8 +115,11 @@ export class HeaderComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          this.toastr.success('You are loggedIn successfully');
+          this.toastr.success('You are loggedIn successfully', null, {
+            positionClass: 'toast-top-center' 
+         });
           this.closeModal();
+          this.router.navigate(['/home']);
         },
         error => {
           let errorMessage = (error && error.error) ? error.error : 'Sorry! something went wrong.'

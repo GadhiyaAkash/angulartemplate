@@ -5,14 +5,11 @@
     </div>
     <div class="col-sm-6">
       <ul class="header-menu">
-        <li>
+        <li *ngIf="!currentUser">
           <a class="w-text" href="#header">Home</a>
         </li>
-        <li>
+        <li *ngIf="!currentUser">
           <a class="w-text" href="#gallery">Gallery</a>
-        </li>
-        <li *ngIf="currentUser">
-          <a class="w-text" href="">My Profile</a>
         </li>
       </ul>
     </div>
