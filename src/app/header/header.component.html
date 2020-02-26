@@ -1,29 +1,70 @@
 <div class="container header">
-    <div class="row">
-      <div class="col-sm-3">
-        <h1>Jevelin</h1>
-      </div>
-      <div class="col-sm-6">
-        <ul class="header-menu">
-          <li>
-            <a class="w-text" href="#header">Home</a>
-          </li>
-          <li>
-            <a class="w-text" href="#gallery">Gallery</a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-sm-3">
-        <div class="row">
-          <div class="col-sm-2">
-            <fa-icon [icon]="faShoppingBasket"></fa-icon>
-          </div>
-          <div class="col-sm-6">
-            <div class="sopping-cart">
-              <a>Sign In</a>
-            </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <h1>Jevelin</h1>
+    </div>
+    <div class="col-sm-6">
+      <ul class="header-menu">
+        <li>
+          <a class="w-text" href="#header">Home</a>
+        </li>
+        <li>
+          <a class="w-text" href="#gallery">Gallery</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-3">
+      <div class="row">
+        <div class="col-sm-2">
+          <fa-icon [icon]="faShoppingBasket"></fa-icon>
+        </div>
+        <div class="col-sm-6">
+          <div (click)="open(content)" class="sopping-cart">
+            <a>Sign In</a>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+<ng-template #content let-modal>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">
+        Sign In
+      </h4>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="username">
+          Username
+          <span class="require">*</span>
+        </label>
+        <div class="input-group">
+          <input type="text" id="username" class="form-control" placeholder="Username"
+            [ngClass]="{ 'is-invalid': submitted && f.username.errors }" formControlName="username">
+          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">This field is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">
+          Password
+          <span class="require">*</span>
+        </label>
+        <div class="input-group">
+          <input type="password" id="password" class="form-control" placeholder="Password"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }" formControlName="password">
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">This field is required</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-danger" (click)="closeModal()">Cancel</button>
+      <button class="btn btn-outline-dark">Sign In</button>
+    </div>
+  </form>
+</ng-template>
