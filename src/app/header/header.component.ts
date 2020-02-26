@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { first } from 'rxjs/operators';
+import { AuthenticationService } from '../_services/authentication.service';
+import { ToastrService } from 'ngx-toastr';
+import { Router, ActivatedRoute } from '@angular/router';
+import { User } from '../_models/user';
 
 @Component({
   selector: 'app-header',
@@ -16,14 +21,29 @@ export class HeaderComponent implements OnInit {
   closeResult: string;
   registerForm: FormGroup;
   submitted = false;
+  currentUser: User;
 
   /**
    * Constructor to assign instance
    */
   constructor(
     private modalService: NgbModal,
-    private formBuilder: FormBuilder
-  ) { }
+    private formBuilder: FormBuilder,
+    private authenticationService: AuthenticationService,
+    private toastr: ToastrService,
+    private route: ActivatedRoute,
+    private router: Router,
+  ) {
+    console.log("this.authenticationService.currentUserValue::", this.authenticationService.currentUserValue);
+    if (this.authenticationService.currentUserValue) {
+      this.router.navigate(['/home']);
+    }
+
+    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+
+    console.log("this.currentUser::", this.currentUser);
+
+  }
 
   /**
    * On init modal when component has been loaded
@@ -87,17 +107,27 @@ export class HeaderComponent implements OnInit {
    */
   onSubmit() {
     this.submitted = true;
-
-    // stop here if form is invalid
     if (this.registerForm.invalid) {
       return;
     }
 
-    // display form values on success
-    console.log("this.registerForm.value::", this.registerForm.value);
-    
-    alert(
-      "SUCCESS!! :-)\n\n" + JSON.stringify(this.registerForm.value, null, 4)
-    );
+    this.authenticationService.login(this.registerForm.value)
+      .pipe(first())
+      .subscribe(
+        data => {
+          this.toastr.success('You are loggedIn successfully');
+          this.closeModal();
+        },
+        error => {
+          let errorMessage = (error && error.error) ? error.error : 'Sorry! something went wrong.'
+          this.toastr.error(errorMessage);
+          this.registerForm.reset();
+          this.submitted = false;
+        });
+  }
+
+  logout() {
+    this.authenticationService.logout();
+    this.router.navigate(['/']);
   }
 }

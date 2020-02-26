@@ -11,6 +11,9 @@
         <li>
           <a class="w-text" href="#gallery">Gallery</a>
         </li>
+        <li *ngIf="currentUser">
+          <a class="w-text" href="">My Profile</a>
+        </li>
       </ul>
     </div>
     <div class="col-sm-3">
@@ -19,8 +22,11 @@
           <fa-icon [icon]="faShoppingBasket"></fa-icon>
         </div>
         <div class="col-sm-6">
-          <div (click)="open(content)" class="sopping-cart">
+          <div *ngIf="!currentUser" (click)="open(content)" class="sopping-cart">
             <a>Sign In</a>
+          </div>
+          <div *ngIf="currentUser" (click)="logout()" class="sopping-cart">
+            <a>Sign Out</a>
           </div>
         </div>
       </div>
