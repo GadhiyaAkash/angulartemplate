@@ -40,9 +40,6 @@ export class HeaderComponent implements OnInit {
     }
 
     this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
-
-    console.log("this.currentUser::", this.currentUser);
-
   }
 
   /**
