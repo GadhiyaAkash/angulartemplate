@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { first } from 'rxjs/operators';
 import { AuthenticationService } from '../_services/authentication.service';
 import { ToastrService } from 'ngx-toastr';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { User } from '../_models/user';
 
 @Component({
@@ -31,15 +31,11 @@ export class HeaderComponent implements OnInit {
     private formBuilder: FormBuilder,
     private authenticationService: AuthenticationService,
     private toastr: ToastrService,
-    private route: ActivatedRoute,
     private router: Router,
   ) {
-    console.log("this.authenticationService.currentUserValue::", this.authenticationService.currentUserValue);
-    if (this.authenticationService.currentUserValue) {
-      this.router.navigate(['/home']);
+    if (this.authenticationService.currentUser) {
+      this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
     }
-
-    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
   }
 
   /**

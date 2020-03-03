@@ -1,0 +1,48 @@
+<div class="page-container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="section-container">
+                <div class="section-body t-align-center">
+                    <img src="{{ this.currentUser.user.avatar ? this.currentUser.user.avatar : '../../assets/avatar.png' }}"
+                        alt="" class="image-avatar sm rounded-circle">
+                    <h3 class="mt15">{{ this.currentUser.user.full_name }}</h3>
+                    <p class="mt15">{{ this.currentUser.user.job_title }}</p>
+                    <div class="mt15">
+                        <button class="btn full-width mb10">Edit Profile Details</button>
+                        <button class="btn full-width">Change Password</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="section-container">
+                <div class="section-title">
+                    <h3 class="pull-left">Edit Personal Details</h3>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="section-body">
+                    <div class="row mb15">
+                        <div class="col-sm-3">First Name</div>
+                        <div class="col-sm-9">{{ this.currentUser.user.first_name }}</div>
+                    </div>
+                    <div class="row mb15">
+                        <div class="col-sm-3">Surname</div>
+                        <div class="col-sm-9">{{ this.currentUser.user.last_name }}</div>
+                    </div>
+                    <div class="row mb15">
+                        <div class="col-sm-3">Email Address</div>
+                        <div class="col-sm-9">{{ this.currentUser.user.email }}</div>
+                    </div>
+                    <div class="row mb15">
+                        <div class="col-sm-3">Phone Number</div>
+                        <div class="col-sm-9">{{ this.currentUser.user.phone_number }}</div>
+                    </div>
+                    <div class="row mb15">
+                        <div class="col-sm-3">Role</div>
+                        <div class="col-sm-9">{{ this.currentUser.user.role_name }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

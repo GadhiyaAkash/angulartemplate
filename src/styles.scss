@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
+a {
+  cursor: pointer;
+}
+
 .container {
   max-width: inherit;
 }
@@ -18,4 +22,53 @@
 
 .require {
   color: red;
+}
+
+.image-avatar {
+  width: 100%;
+  cursor: pointer;
+  &.xs {
+    width: 30%;
+  }
+  &.sm {
+    width: 50%;
+  }
+  &.md {
+    width: 70%;
+  }
+}
+
+.dropdown-item:active {
+  background-color: black;
+}
+
+.header-menu {
+  .active {
+    font-size: large;
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+// Spacing Classes start here...
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.mt15 {
+  margin-top: 15px;
+}
+.mb15 {
+  margin-bottom: 15px;
+}
+
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
 }

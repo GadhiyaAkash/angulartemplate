@@ -4,12 +4,17 @@
       <h1>Jevelin</h1>
     </div>
     <div class="col-sm-6">
-      <ul class="header-menu">
-        <li *ngIf="!currentUser">
+      <ul class="header-menu" *ngIf="!currentUser">
+        <li>
           <a class="w-text" href="#header">Home</a>
         </li>
-        <li *ngIf="!currentUser">
+        <li>
           <a class="w-text" href="#gallery">Gallery</a>
+        </li>
+      </ul>
+      <ul class="header-menu" *ngIf="currentUser">
+        <li>
+          <a class="w-text" routerLink="/home" routerLinkActive="active">Users</a>
         </li>
       </ul>
     </div>
@@ -22,8 +27,13 @@
           <div *ngIf="!currentUser" (click)="open(content)" class="sopping-cart">
             <a>Sign In</a>
           </div>
-          <div *ngIf="currentUser" (click)="logout()" class="sopping-cart">
-            <a>Sign Out</a>
+          <div *ngIf="currentUser" ngbDropdown class="d-inline-block">
+            <img src="{{ this.currentUser.user.avatar ? this.currentUser.user.avatar : '../../assets/avatar.png' }}"
+              id="dropdownBasic1" ngbDropdownToggle alt="" class="image-avatar xs rounded-circle">
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <a routerLink="/profile" ngbDropdownItem>Profile</a>
+              <a (click)="logout()" ngbDropdownItem>Sign Out</a>
+            </div>
           </div>
         </div>
       </div>
