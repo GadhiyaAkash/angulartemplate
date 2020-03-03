@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { PublicComponent } from './public/public.component';
-import { AuthGuard } from './_heapers/auth.guard';
+import { AuthGuard } from './_helpers/auth.guard';
 
 const routes: Routes = [
   { path: '', component: PublicComponent },
